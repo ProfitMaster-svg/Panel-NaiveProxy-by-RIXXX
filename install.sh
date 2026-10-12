@@ -167,7 +167,7 @@ done
 [[ -z "$GO_VERSION" || "$GO_VERSION" != go* ]] && GO_VERSION="go1.22.5"
 
 log_info "Загружаем ${GO_VERSION}..."
-wget -q --show-progress --timeout=180 \
+wget -q -4 --show-progress --timeout=180 \
   "https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz" \
   -O /tmp/go.tar.gz 2>&1 || {
     log_err "Не удалось загрузить Go!"
